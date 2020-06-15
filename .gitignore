@@ -1,0 +1,15 @@
+.*
+!.git?*
+!.mvn/
+target/
+build/
+bin/
+application-local.yml
+*.iml
+*.tmp
+*.log
+*.jdbc
+*.launch
+/repository
+/settings.xml
+persistence/src/main/resources/META-INF/persistence.xml
