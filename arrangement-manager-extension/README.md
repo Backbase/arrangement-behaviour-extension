@@ -3,7 +3,7 @@
 This project is an example on how to create a behaviour extension for arrangement-manager. 
 The example involves changing accountHolderCountry randomly and setting accountHolderStreetName to "123 Fake Street".
 
-**Make sure you create all the extended classes under com.backbase.dbs.product package**.
+**Make sure you create all the extended classes under com.backbase.dbs.product package** as this is the package that Spring will scan to create the beans.
 
 ## How to use
 
