@@ -2,6 +2,7 @@ package com.backbase.dbs.product.arrangement;
 
 import com.backbase.buildingblocks.backend.security.accesscontrol.accesscontrol.AccessControlValidator;
 import com.backbase.dbs.product.balance.BalanceService;
+import com.backbase.dbs.product.common.Configurations;
 import com.backbase.dbs.product.common.clients.AccessGroupClient;
 import com.backbase.dbs.product.common.clients.AccountIntegrationClient;
 import com.backbase.dbs.product.common.clients.LegalEntityClient;
@@ -26,7 +27,7 @@ public class ExtendedPermissionAwareArrangementService extends PermissionAwareAr
     private static final Logger LOG = LoggerFactory.getLogger(ExtendedPermissionAwareArrangementService.class);
     private static final String[] LOCALES = Locale.getISOCountries();
 
-    public ExtendedPermissionAwareArrangementService(ArrangementService arrangementService,
+    public ExtendedPermissionAwareArrangementService(Configurations configurations, ArrangementService arrangementService,
         UserClient userClient, AccessGroupClient accessGroupClient,
         AccountIntegrationClient accountIntegrationClient,
         ArrangementUpdater arrangementUpdater,
@@ -34,7 +35,7 @@ public class ExtendedPermissionAwareArrangementService extends PermissionAwareAr
         LegalEntityClient legalEntityClient, ProductJpaRepository productJpaRepository,
         BalanceService balanceService,
         AccessControlValidator accessControlValidator) {
-        super(arrangementService, userClient, accessGroupClient, accountIntegrationClient, arrangementUpdater,
+        super(configurations, arrangementService, userClient, accessGroupClient, accountIntegrationClient, arrangementUpdater,
             arrangementJpaRepository, legalEntityClient, productJpaRepository, balanceService, accessControlValidator);
         LOG.info("Extended service has been created");
     }
