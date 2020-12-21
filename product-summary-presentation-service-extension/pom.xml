@@ -12,7 +12,7 @@
         <dockerfile-maven-version>1.4.13</dockerfile-maven-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <dbs.version>2.19.0-cr.110</dbs.version>
+        <dbs.version>2.19.0</dbs.version>
     </properties>
 
     <dependencyManagement>
