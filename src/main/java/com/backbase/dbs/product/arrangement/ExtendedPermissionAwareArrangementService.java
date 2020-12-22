@@ -1,8 +1,8 @@
 package com.backbase.dbs.product.arrangement;
 
 import com.backbase.buildingblocks.backend.security.accesscontrol.accesscontrol.AccessControlValidator;
+import com.backbase.dbs.product.Configurations;
 import com.backbase.dbs.product.balance.BalanceService;
-import com.backbase.dbs.product.common.Configurations;
 import com.backbase.dbs.product.common.clients.AccessGroupClient;
 import com.backbase.dbs.product.common.clients.AccountIntegrationClient;
 import com.backbase.dbs.product.common.clients.LegalEntityClient;
@@ -10,12 +10,13 @@ import com.backbase.dbs.product.common.clients.UserClient;
 import com.backbase.dbs.product.repository.ArrangementJpaRepository;
 import com.backbase.dbs.product.repository.ProductJpaRepository;
 import com.backbase.dbs.product.repository.arrangement.ArrangementSearchParams;
-import java.util.Locale;
-import javax.validation.constraints.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
+
+import javax.validation.constraints.NotNull;
+import java.util.Locale;
 
 /**
  * Sample class extending getArrangementsByBusinessFunction operation.
