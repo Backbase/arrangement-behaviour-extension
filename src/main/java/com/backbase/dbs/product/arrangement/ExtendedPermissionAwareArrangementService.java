@@ -46,7 +46,7 @@ public class ExtendedPermissionAwareArrangementService extends PermissionAwareAr
     @Override
     public GetArrangementsByBusinessFunctionResult getArrangementsByBusinessFunction(
         @NotNull ArrangementSearchParams arrangementSearchParams, Boolean withLatestBalances, String privilege,
-        String businessFunction, String resourceName) {
+        String[] businessFunction, String resourceName) {
 
         LOG.info("Pre hook");
 
