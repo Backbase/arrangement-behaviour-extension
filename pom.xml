@@ -15,7 +15,7 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven.compiler.source>${java.version}</maven.compiler.source>
 
-    <dbs.version>2.19.0</dbs.version>
+    <dbs.version>2.19.1</dbs.version>
   </properties>
 
   <dependencies>
