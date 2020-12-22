@@ -3,10 +3,9 @@ package com.backbase.dbs.product.arrangement;
 import com.backbase.buildingblocks.backend.security.accesscontrol.accesscontrol.AccessControlValidator;
 import com.backbase.dbs.product.Configurations;
 import com.backbase.dbs.product.balance.BalanceService;
-import com.backbase.dbs.product.common.clients.AccessGroupClient;
-import com.backbase.dbs.product.common.clients.AccountIntegrationClient;
-import com.backbase.dbs.product.common.clients.LegalEntityClient;
-import com.backbase.dbs.product.common.clients.UserClient;
+import com.backbase.dbs.product.clients.AccessControlClient;
+import com.backbase.dbs.product.clients.JwtContext;
+import com.backbase.dbs.product.common.clients.AccountOutboundWrapper;
 import com.backbase.dbs.product.repository.ArrangementJpaRepository;
 import com.backbase.dbs.product.repository.ProductJpaRepository;
 import com.backbase.dbs.product.repository.arrangement.ArrangementSearchParams;
@@ -28,16 +27,15 @@ public class ExtendedPermissionAwareArrangementService extends PermissionAwareAr
     private static final Logger LOG = LoggerFactory.getLogger(ExtendedPermissionAwareArrangementService.class);
     private static final String[] LOCALES = Locale.getISOCountries();
 
-    public ExtendedPermissionAwareArrangementService(Configurations configurations, ArrangementService arrangementService,
-        UserClient userClient, AccessGroupClient accessGroupClient,
-        AccountIntegrationClient accountIntegrationClient,
-        ArrangementUpdater arrangementUpdater,
-        ArrangementJpaRepository arrangementJpaRepository,
-        LegalEntityClient legalEntityClient, ProductJpaRepository productJpaRepository,
-        BalanceService balanceService,
-        AccessControlValidator accessControlValidator) {
-        super(configurations, arrangementService, userClient, accessGroupClient, accountIntegrationClient, arrangementUpdater,
-            arrangementJpaRepository, legalEntityClient, productJpaRepository, balanceService, accessControlValidator);
+    public ExtendedPermissionAwareArrangementService(
+            Configurations configurations, ArrangementService arrangementService, JwtContext jwtContext,
+            AccessControlClient accessControlClient, AccountOutboundWrapper accountOutboundWrapper,
+            ArrangementUpdater arrangementUpdater, ArrangementJpaRepository arrangementJpaRepository,
+            ProductJpaRepository productJpaRepository, BalanceService balanceService,
+            AccessControlValidator accessControlValidator, DebitCardCommandMapper debitCardCommandMapper) {
+        super(configurations, arrangementService, jwtContext, accessControlClient, accountOutboundWrapper,
+                arrangementUpdater, arrangementJpaRepository, productJpaRepository,
+                balanceService, accessControlValidator, debitCardCommandMapper);
         LOG.info("Extended service has been created");
     }
 
