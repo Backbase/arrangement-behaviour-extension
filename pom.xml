@@ -79,6 +79,7 @@
               <buildArgs>
                 <JAR_FILE>${project.artifactId}-${project.version}.jar</JAR_FILE>
               </buildArgs>
+              <dockerfile>${project.basedir}/Dockerfile</dockerfile>
             </configuration>
           </plugin>
         </plugins>
