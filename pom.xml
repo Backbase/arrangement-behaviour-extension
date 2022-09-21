@@ -41,13 +41,14 @@
 
     <dependencies>
         <dependency>
-            <!--
-            The old group ID has been deprecated but it is still supported
-            <groupId>com.backbase.dbs.arrangement</groupId>
-            -->
             <groupId>com.backbase.products</groupId>
             <artifactId>arrangement-manager</artifactId>
             <classifier>classes</classifier>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.backbase.dbs.accesscontrol</groupId>
+            <artifactId>auth-security-dbs-accesscontrol</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
